@@ -1,0 +1,33 @@
+.card{
+    border: 1px solid #efefef;
+    background: #fff;
+}
+.book-image{
+    width: 100%;
+}
+.book-image img{
+    height: 100%;
+    width : 100%;
+    border: 1px solid #efefef;
+}
+.book-title{
+    padding: 10px 0 10px 0;
+    font-size: 20px;
+}
+.book-author{
+    padding: 3px 0 3px 0;
+    font-size: 15px;
+}
+.book-link{
+    margin: 15px 0 10px 0;
+    height: 50px;
+}
+.book-link a{
+    color: #fff;
+    background: #000;
+    border-radius: 4px;
+    border: 1px solid #000;
+    padding: 10px 30px;
+    text-decoration: none;
+    width: 50%;
+}
