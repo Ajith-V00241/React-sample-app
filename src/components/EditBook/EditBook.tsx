@@ -26,8 +26,11 @@ function EditBook(props:any){
                 {
                     setNotFound(true)
                 }
-                else{
+                else
+                {
+                    
                     setBook(resp.data.data.attributes)
+
                     setTitle(resp.data.data.attributes.title)
                     setAuthor(resp.data.data.attributes.author)
                     setPublisher(resp.data.data.attributes.publisher)
@@ -60,6 +63,7 @@ function EditBook(props:any){
             alert("Available Books should not be greater than Total Books")
             return false
         }
+        console.log("temp:"+tempBook+"/nBook:"+book)
         return true
        
         

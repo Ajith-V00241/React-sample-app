@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DataService from '../../services/data.services'
 import '../../stylesheets/AddBook.css'
 import { Redirect} from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 type MyProps = {};
 type MyState = {
@@ -16,10 +17,9 @@ type MyState = {
                 error: boolean,
                 id: any
             }
-var errors:any
  class AddBook extends Component< MyProps, MyState >{
     
-    constructor(props:any){
+    constructor(props :any){
         
         super(props)
         this.onChangeTitle = this.onChangeTitle.bind(this)
@@ -121,7 +121,7 @@ var errors:any
         {
             
                 alert(message.concat()+" can't be blank")
-            
+                //ReactDOM.render(<ul>{message.map(msg=><li key={msg}>{msg}</li>)}</ul>,document.getElementById('errors'))
             return false
         }
         else
@@ -172,11 +172,7 @@ var errors:any
                     <br/>
                     <h1>Add New Book</h1>
                     <br/>
-                    <div className="Errors">
-                        { !this.state.error &&
-                            <ul>{errors}</ul>
-                        }
-                    </div>
+                    <div id="errors"> </div>
                     {/* <form > */}
                         <input className="form-text" id="title" name="title" placeholder="Name" onChange={this.onChangeTitle} required/> <br />
                         <input className="form-text" id="author" name="author" placeholder="Author" onChange={this.onChangeAuthor} required/> <br />
@@ -185,7 +181,7 @@ var errors:any
                         <textarea className="form-description" rows={4} id="description" name="description" placeholder="Description" onChange={this.onChangeDescription} required/> <br />
                         <div >Total Books:</div><input className="form-text" type="number" defaultValue="0" id="totalBooks" name="totalBooks" placeholder="Total Books" onChange={this.onChangeTotalBooks} required/> <br />
                         <input className="form-text" id="imagePath" name="image" placeholder="Image Path" onChange={this.onChangeImage} /> <br />
-                        <button onClick={this.saveBook}>Add Book</button>
+                        <button className="submit" onClick={this.saveBook}>Add Book</button>
                     {/* </form> */}
                 </div>
              </div>
